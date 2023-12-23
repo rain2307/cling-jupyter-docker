@@ -1,7 +1,7 @@
 FROM quay.io/jupyter/minimal-notebook
 
 ARG CONDA_ENV_NAME=cling
-ARG python_version=3.8
+ARG python_version=3.11
 
 # Switch to root user
 USER root
@@ -23,5 +23,5 @@ RUN /bin/bash -c "source activate $CONDA_ENV_NAME && \
     jupyter kernelspec install /opt/conda/envs/cling/share/jupyter/kernels/xcpp14 --sys-prefix && \
     jupyter kernelspec install /opt/conda/envs/cling/share/jupyter/kernels/xcpp17 --sys-prefix"
 
-# Set the default command to start Jupyter Notebook
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+# Set the default command to start Jupyter lab
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]

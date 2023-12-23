@@ -28,5 +28,5 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/cling-jupyter:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/cling-lab:latest
 
